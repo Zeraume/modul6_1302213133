@@ -15,6 +15,7 @@ namespace modul6_1302213133
 
         public SayaTubeUser(string username)
         {
+            Debug.Assert(username != null && username.Length <= 100, "Username tidak boleh melebihi 100 huruf");
             this.username = username;
             var random = new Random();
             this.id = random.Next(0,10);
@@ -28,6 +29,7 @@ namespace modul6_1302213133
 
         public void AddVideo(SayaTubeVideo videoBaru)
         {
+            Debug.Assert(videoBaru.playCount <= 25000000 && videoBaru != null, "Video tidak boleh melebihi play count");
             uploadedVideos.Add(videoBaru);
         }
 

@@ -16,9 +16,20 @@ SayaTubeVideo video8 = new SayaTubeVideo("Ted Lasso: Season 3");
 SayaTubeVideo video9 = new SayaTubeVideo("Jigokuraku");
 SayaTubeVideo video10 = new SayaTubeVideo("Koe no Katachi");
 
+video1.increasePlayCount(25000000);
+video2.increasePlayCount(100);
+video3.increasePlayCount(251);
+video4.increasePlayCount(2500000);
+video5.increasePlayCount(1234567);
+video6.increasePlayCount(251213);
+video7.increasePlayCount(250467);
+video8.increasePlayCount(1);
+video9.increasePlayCount(500);
+video10.increasePlayCount(600);
+
 Console.WriteLine("Review Film " + video1.title + " Oleh: " + user.username);
 user.AddVideo(video1);
-Console.WriteLine("Menambahkan film: ");
+Console.WriteLine("Menambahkan film: "+ "OVERFLOW");
 video1.printVideoDetails();
 
 Console.WriteLine("Review Film " + video2.title + " Oleh: " + user.username);

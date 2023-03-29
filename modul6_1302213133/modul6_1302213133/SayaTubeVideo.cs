@@ -15,6 +15,7 @@ namespace modul6_1302213133
 
         public SayaTubeVideo(string title)
         {
+            Debug.Assert(title != null && title.Length <= 200, "Judul video tidak boleh melebihi 200 huruf");
             this.title = title;
             var random = new Random();
             id = random.Next(0,100);
@@ -23,7 +24,15 @@ namespace modul6_1302213133
 
         public void increasePlayCount(int playCount)
         {
-            playCount++;
+            Debug.Assert(playCount <= 25000000, "Input penambahan play count maksimal 25000000");
+            try
+            {
+                this.playCount = checked(this.playCount + playCount);
+            }
+            catch (OverflowException ex)
+            {
+                Console.WriteLine("Overflow Exception" + ex.Message);
+            }
         }
 
         public void printVideoDetails()
